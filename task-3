@@ -1,0 +1,36 @@
+//Q:Use the same restcountries and print all countries name,regions,sub-region and populations.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+var request= new  XMLHttpRequest();
+request.open('GET','https://restcountries.com/v3.1/all')
+request.send()
+request.onload=function(){
+  var data=request.response
+  console.log(data)
+  console.log(JSON.parse(data))
+  var obj1=JSON.parse(data)
+  console.log(obj1.length)
+
+  //for loop
+  for (i=0;i<obj1.length;i++){
+    console.log(obj1[i].name.common)
+    console.log(obj1[i].region)
+    console.log(obj1[i].subregion)
+    console.log(obj1[i].population)
+    
+  }
+}
+
+  </script>
+</body>
+</html>
