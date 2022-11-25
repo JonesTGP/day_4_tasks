@@ -1,0 +1,29 @@
+//How to compare two JSON hav the same properties without order?
+//   a. var obj1={name:"Person 1",age:5};
+//   b. var obj2={age:5,name:"Person 1"};
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj1 = '{"name":"Person 1","age": 5}';
+    var obj2 = '{"age": 5,"name":"Person 1"}';
+    var arr1 = JSON.parse(obj1);
+    var arr2 = JSON.parse(obj2);
+    if((arr1.name)==(arr2.name)){
+      console.log("same person")
+    }
+    else{"diffrent person"}
+    if((arr1.age)==(arr2.age)){
+      console.log("same age")
+    }
+    else{"diffrent age"}
+  </script>
+</body>
+</html>
